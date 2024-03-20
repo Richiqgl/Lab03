@@ -1,14 +1,21 @@
 class Dictionary:
     def __init__(self):
-        pass
+        self.dizionario=[]
 
     def loadDictionary(self,path):
-        pass
+        infile = open(path, "r")
+        line = infile.readline()
+        while line != "":
+            campi = line.rstrip()
+            self.dizionario.append(campi)
+            line = infile.readline()
+        infile.close()
 
     def printAll(self):
-        pass
+        for parola in self.dizionario:
+            print(parola)
 
 
     @property
     def dict(self):
-        return self._dict
+        return self.dizionario
